@@ -1,0 +1,4 @@
+
+const bankingReducer = (state, action) => {
+
+}
