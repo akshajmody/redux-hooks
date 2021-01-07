@@ -6,12 +6,16 @@ export const bankingReducer = (state = initialState, action) => {
   switch (action.type) {
     case "DEPOSIT":
       //LOGIC FOR DEPOSIT
+    return state + action.amount
     case "WITHDRAW":
       //LOGIC FOR WITHDRAW
+    return state - action.amount
     case "COLLECT_INTEREST":
       //LOGIC FOR COLLECT INTEREST
+    return state*1.03
     case "DELETE_ACCOUNT":
       //LOGIC FOR DELETE ACCOUNT
+    return 0
     default:
       return state
   }
@@ -19,7 +23,7 @@ export const bankingReducer = (state = initialState, action) => {
   //   //logic for deposit
   // }
   // if (action.type === "WITHDRAW") {
-}
+};
 
 //actions
 //one absolute requirement for action - thats a type parameter
