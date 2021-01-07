@@ -1,5 +1,8 @@
 
-export const bankingReducer = (state = 0, action) => {
+const initialState = 0;
+
+
+export const bankingReducer = (state = initialState, action) => {
   switch (action.type) {
     case "DEPOSIT":
       //LOGIC FOR DEPOSIT
