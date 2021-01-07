@@ -1,5 +1,5 @@
 
-export const bankingReducer = (state, action) => {
+export const bankingReducer = (state = 0, action) => {
   switch (action.type) {
     case "DEPOSIT":
       //LOGIC FOR DEPOSIT
@@ -16,10 +16,6 @@ export const bankingReducer = (state, action) => {
   //   //logic for deposit
   // }
   // if (action.type === "WITHDRAW") {
-
-  // }
-  return state;
-  //returning the old value of the state
 }
 
 //actions
