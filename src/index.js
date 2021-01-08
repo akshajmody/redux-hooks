@@ -3,39 +3,43 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {createStore} from "redux";
 import {bankingReducer} from "./reducers/bankingReducers";
+import {Provider} from "react-redux";
 
 const store = createStore(bankingReducer);
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'));
 
 
-//action
+//actions
 //one absolute requirement for action - thats a type parameter
 
-
 //deposit
-const deposit = {
-  type: "DEPOSIT",
-  amount: 20
-}
+// const deposit = {
+//   type: "DEPOSIT",
+//   amount: 20
+// }
 
-//withdraw
-const withdraw = {
-  type: "WITHDRAW",
-  amount: 30
-}
+// //withdraw
+// const withdraw = {
+//   type: "WITHDRAW",
+//   amount: 30
+// }
 
-//collect interest
+// //collect interest
 
-const collectInterest = {
-  type: "COLLECT_INTEREST"
-  //Since we are going to providing a fixed interest amount, we don't need to add payload here and can implement the logic of the percentage within the reducer itself rather than the action
-}
+// const collectInterest = {
+//   type: "COLLECT_INTEREST"
+//   //Since we are going to providing a fixed interest amount, we don't need to add payload here and can implement the logic of the percentage within the reducer itself rather than the action
+// }
 
-//delete account
-const deleteAccount = {
-  type: "DELETE_ACCOUNT"
-  //no payload
-}
+// //delete account
+// const deleteAccount = {
+//   type: "DELETE_ACCOUNT"
+//   //no payload
+// }
