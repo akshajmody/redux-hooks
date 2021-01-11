@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
+import { useDispatch } from "react-redux";
+
 
 const Banking = () => {
   const [amount, setAmount] = useState("");
+  const dispatch = useDispatch();
 
   const handleDeposit = () => {
-
+    dispatch({ type: "DEPOSIT", amount: parseInt(amount) })
   };
   const handleWithdraw = () => {
-
+    dispatch({ type: "WITHDRAW", amount: parseInt(amount) })
   };
   const handleCollectInterest = () => {
-
+    dispatch({ type: "COLLECT_INTEREST" })
   };
   const handleDelete = () => {
-
+    dispatch({ type: "DELETE_ACCOUNT" })
   };
   const handleAccountChange = () => {
 
@@ -22,7 +25,7 @@ const Banking = () => {
 
   return (
     <div className="form-group">
-      <input value={ amount } onChange={(e) => e.target.value} type="text" className="form-control"/>
+      <input value={amount} onChange={(e) => setAmount(e.target.value)} type="text" className="form-control"/>
       <button onClick={handleDeposit} className="btn btn-success">Deposit</button>
       <button onClick={handleWithdraw} className="btn btn-primary">Withdraw</button>
       <button onClick={handleCollectInterest} className="btn btn-warning">Collect Interest</button>
