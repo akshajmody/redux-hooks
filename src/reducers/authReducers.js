@@ -7,7 +7,7 @@ const initState = {
   //authenticated
 }
 
-  export const authReducer = (state, action) => {
+export const authReducer = (state = initState, action) => {
   switch (action.type) {
     case "TOGGLE_AUTH":
       return {...state, isLoggedIn: !state.isLoggedIn}
