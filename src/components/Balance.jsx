@@ -10,7 +10,7 @@ const Balance = () => {
 
   return (
     <div>
-      <h1>${balance}</h1>
+      <h1>${balance.toFixed(2)}</h1>
     </div>
   )
 

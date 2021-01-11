@@ -12,7 +12,7 @@ export const bankingReducer = (state = initialState, action) => {
     return { ...state, balance: state.balance + action.amount }
     case "WITHDRAW":
       //LOGIC FOR WITHDRAW
-    return { ...state, balance: state.balanace - action.amount }
+    return { ...state, balance: state.balance - action.amount }
     case "COLLECT_INTEREST":
       //LOGIC FOR COLLECT INTEREST
     return { ...state, balance: state.balance*1.03 }
