@@ -2,15 +2,23 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 
-//ACTION CREATOR BRANCH
 const Balance = () => {
-  const store = useSelector(state => state)
+  const balance = useSelector(state => state.balance);
+
+  const store = useSelector(state => state);
+  console.log(store);
 
   return (
     <div>
-      <h1>${store}</h1>
+      <h1>${balance}</h1>
     </div>
   )
+
+  // return (
+  //   <div>
+  //     <h1>${store.balance}</h1>
+  //   </div>
+  // )
 }
 
 export default Balance

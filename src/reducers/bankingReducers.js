@@ -1,21 +1,27 @@
 
-const initialState = 0;
+const initialState = {
+  balance: 0,
+  isSavingsAccount: false
+};
 
-
+//USE SPREAD OPERATOR ...state to keep all parts of the state when changing one part of the state
 export const bankingReducer = (state = initialState, action) => {
   switch (action.type) {
     case "DEPOSIT":
       //LOGIC FOR DEPOSIT
-    return state + action.amount
+    return { ...state, balance: state.balance + action.amount }
     case "WITHDRAW":
       //LOGIC FOR WITHDRAW
-    return state - action.amount
+    return { ...state, balance: state.balanace - action.amount }
     case "COLLECT_INTEREST":
       //LOGIC FOR COLLECT INTEREST
-    return state*1.03
+    return { ...state, balance: state.balance*1.03 }
     case "DELETE_ACCOUNT":
       //LOGIC FOR DELETE ACCOUNT
-    return 0
+    return { ...state, balance: 0 }
+    case "TOGGLE_ACCOUNT":
+      //LOGIC FOR CHANGE ACCOUNT
+    return { ...state, isSavingsAccount: !state.isSavingsAccount }
     default:
       return state
   }
