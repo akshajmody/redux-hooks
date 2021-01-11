@@ -1,9 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const Banking = () => {
+  const [amount, setAmount] = useState("");
+
+  const handleDeposit = () => {
+
+  };
+  const handleWithdraw = () => {
+
+  };
+  const handleCollectInterest = () => {
+
+  };
+  const handleDelete = () => {
+
+  };
+  const handleAccountChange = () => {
+
+  };
+
+
   return (
     <div className="form-group">
-      <input type="text" className="form-control"/>
+      <input value={ amount } onChange={(e) => e.target.value} type="text" className="form-control"/>
       <button onClick={handleDeposit} className="btn btn-success">Deposit</button>
       <button onClick={handleWithdraw} className="btn btn-primary">Withdraw</button>
       <button onClick={handleCollectInterest} className="btn btn-warning">Collect Interest</button>
